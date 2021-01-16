@@ -17,16 +17,8 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 data_path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
 
-ds = TabularDatasetFactoy.from_delimeted_files(path = data_path, validate = True, include_path = False, infer_column_types = True, set_column_types = None, separator = ',', header = True,
-                          parition_format = None, support_multi_line = False, empty_as_string = False, encoding = 'utf8' )     ### YOUR CODE HERE ###
+ds = TabularDatasetFactory.from_delimited_files([data_path])     ### YOUR CODE HERE ###
 
-x, y = clean_data(ds)
-
-# TODO: Split data into train and test sets.
-### YOUR CODE HERE ###
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, train_size = 0.75 , random_state = 4, shuffle = True )
-
-run = Run.get_context()
 
 def clean_data(data):
     # Dict for cleaning data
@@ -54,6 +46,16 @@ def clean_data(data):
 
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
     
+    return x_df, y_df
+
+
+x, y = clean_data(ds)
+
+# TODO: Split data into train and test sets.
+### YOUR CODE HERE ###
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, train_size = 0.75 , random_state = 4, shuffle = True )
+
+run = Run.get_context()
 
 def main():
     # Add arguments to script
@@ -72,5 +74,8 @@ def main():
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
 
+# %tb
 if __name__ == '__main__':
     main()
+
+
