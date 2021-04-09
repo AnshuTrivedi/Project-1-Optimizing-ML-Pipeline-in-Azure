@@ -45,6 +45,7 @@ For more aggressive savings, use Bandit Policy with a smaller allowable slack
 An early stopping policy is used to automatically terminate poorly performing runs thus improving computational efficiency. I chose the BanditPolicy which I specified as follows:
 
 ```policy = BanditPolicy(evaluation_interval=2, slack_factor=0.1)```
+
 evaluation_interval: This is optional and represents the frequency for applying the policy. Each time the training script logs the primary metric counts as one interval.
 
 slack_factor: The amount of slack allowed with respect to the best performing training run. This factor specifies the slack as a ratio.
