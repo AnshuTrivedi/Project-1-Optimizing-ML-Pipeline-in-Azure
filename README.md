@@ -27,7 +27,8 @@ Parameter sampler
     {
         '--C' : choice(0.001,0.01,0.1,1,10,20,50,100,200,500,1000),
         '--max_iter': choice(50,100,200,300)
-    } )```
+    } )
+```
 
 I chose discrete values with choice for both parameters, C and max_iter.
 C is the Regularization while max_iter is the maximum number of iterations.
