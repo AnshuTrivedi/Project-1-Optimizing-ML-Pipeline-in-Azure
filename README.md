@@ -6,7 +6,7 @@ In this project, I build and optimized an Azure ML pipeline using the Python SDK
 This model is then compared to an Azure AutoML run.</br>
 
 In this project, I had the opportunity to create and optimize an ML pipeline. Provided a **custom-coded model—a standard Scikit-learn Logistic Regression**—the hyperparameters of which **optimized using HyperDrive**. I also used **AutoML to build and optimize a model** on the same dataset, so that I can **compare the results of the two methods**. </br>
-![You can see the main steps that I took in the diagram below:](https://github.com/AnshuTrivedi/Project-1-Optimizing_ML-Pipeline_in_Azure/blob/master/Images/project_overview.png)
+![You can see the main steps that I took in the diagram below:](https://github.com/AnshuTrivedi/Project-1-Optimizing-ML-Pipeline-in-Azure/blob/main/Images/project_overview.png)
 
 
 ## Summary
